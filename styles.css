@@ -19,8 +19,7 @@ body {
 }
 
 #playing-area {
-    visibility: hidden;
-    display: block;
+    display: none;
 }
 
 .caravan-row {

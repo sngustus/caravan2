@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameDiv = document.getElementById('playing-area');
 
     newGameButton.addEventListener('click', () => {
-        menuDiv.style.visibility = 'hidden';
-        gameDiv.style.visibility = 'visible';
+        menuDiv.style.display = 'none';
+        gameDiv.style.display = 'block';
     });
 
 });
