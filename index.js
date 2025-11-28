@@ -7,6 +7,7 @@ let playerDeck = new Deck();
 let playerHand = new Hand(playerDeck);
 
 const playerHandDiv = document.getElementById('player-hand');
+//deal hand
 playerHand.cards.forEach((card, index) => {
     const cardImg = document.createElement('img');
     cardImg.src = card.imgSrc;
