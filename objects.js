@@ -15,7 +15,7 @@ const VALUES = [
     "K", 
 ]
 
-class Deck {
+export class Deck {
     constructor(cards = newDeck()) {
         this.cards = cards
         this.shuffle()
@@ -35,7 +35,7 @@ class Deck {
     }
 }
 
-class Card {
+export class Card {
     constructor(suit, text) {
         this.suit = suit;
         this.text = text;
@@ -62,7 +62,7 @@ class Card {
     }
 }
 
-class Caravan {
+export class Caravan {
     constructor(id,owner) {
         this.id = id;
         this.owner = owner;
@@ -112,7 +112,7 @@ class Caravan {
 
 }
 
-class Hand {
+export class Hand {
     constructor(deck) {
         this.cards = [];
         this.deck = deck;
