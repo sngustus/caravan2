@@ -43,7 +43,7 @@ body {
     height: 20vh;
 }
 
-.card-row img {
+#player-hand img {
     cursor: grab;
 }
 
