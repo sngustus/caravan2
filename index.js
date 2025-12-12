@@ -28,15 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameDiv = document.getElementById('playing-area');
     const playerHandDiv = document.getElementById('player-hand');
 
-    //deal hand
-    playerHand.cards.forEach((card, index) => {
-        const cardImg = document.createElement('img');
-        cardImg.src = card.imgSrc;
-        cardImg.alt = `Card ${index + 1}`;
-        cardImg.classList.add('card');
-        cardImg.draggable = true;
-        playerHandDiv.appendChild(cardImg);
-    });
+    renderHand();
 
     newGameButton.addEventListener('click', () => {
         menuDiv.style.display = 'none';
@@ -64,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 caravan.cards.push(draggedCard); //add card to caravan
                 playerHand.cards = playerHand.cards.filter(c => c !== draggedCard); //remove card from hand
                 playerHand.drawCards(1); //draw a new card
+                renderHand();
                 console.log('Card played:', draggedCard); //for testing
                 draggedCard = null;
 
@@ -74,3 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+
+//render hand
+function renderHand() {
+    const playerHandDiv = document.getElementById('player-hand');
+    playerHandDiv.innerHTML = ''; // Clear existing cards
+        playerHand.cards.forEach((card, index) => {
+            const cardImg = document.createElement('img');
+            cardImg.src = card.imgSrc;
+            cardImg.alt = `Card ${index + 1}`;
+            cardImg.classList.add('card');
+            cardImg.draggable = true;
+            playerHandDiv.appendChild(cardImg);
+        });
+    }
