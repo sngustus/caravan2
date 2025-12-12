@@ -40,9 +40,9 @@ export class Card {
         this.suit = suit;
         this.text = text;
         this.value = 0;
-        if (this.suit == "♠" || this.suit == "♣") {
+        if (this.suit == "spades" || this.suit == "clubs") {
             this.color = "black"
-        } else if (this.suit == "♥" || this.suit == "♦") {
+        } else if (this.suit == "hearts" || this.suit == "diamonds") {
             this.color = "red"
         }
         this.attached = [];
