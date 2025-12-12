@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const caravan = playerCaravans[index]; // Get the actual Caravan object
                 caravan.cards.push(draggedCard); //add card to caravan
                 playerHand.cards = playerHand.cards.filter(c => c !== draggedCard); //remove card from hand
+                playerHand.drawCards(1); //draw a new card
                 console.log('Card played:', draggedCard); //for testing
                 draggedCard = null;
 
