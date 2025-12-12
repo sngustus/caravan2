@@ -28,19 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameDiv = document.getElementById('playing-area');
     const playerHandDiv = document.getElementById('player-hand');
 
-    renderHand();
-
     newGameButton.addEventListener('click', () => {
         menuDiv.style.display = 'none';
         gameDiv.style.display = 'block';
-    });
-
-    //event listeners for player hand cards
-    const handCards = playerHandDiv.querySelectorAll('.card');
-    handCards.forEach((cardImg, index) => {
-        cardImg.addEventListener('dragstart', (e) => {
-            draggedCard = playerHand.cards[index];
-        });
+        renderHand();
     });
 
     //event listeners for caravans
@@ -81,4 +72,12 @@ function renderHand() {
             cardImg.draggable = true;
             playerHandDiv.appendChild(cardImg);
         });
+
+    //event listeners for player hand cards
+    const handCards = playerHandDiv.querySelectorAll('.card');
+    handCards.forEach((cardImg, index) => {
+        cardImg.addEventListener('dragstart', (e) => {
+            draggedCard = playerHand.cards[index];
+        });
+    });
     }
